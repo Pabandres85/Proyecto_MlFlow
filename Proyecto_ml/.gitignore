@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
+Proyecto_ml/results/*.pt
+Proyecto_ml/results/*.safetensors
+Proyecto_ml/results/*.json
+Proyecto_ml/mlruns/
