@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/guita/OneDrive/Escritorio/ProyectMlFlow/Proyecto_ml/mlruns/0/538929fee32740fca1e467b25ec1a256/artifacts
+end_time: 1741058283051
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 538929fee32740fca1e467b25ec1a256
+run_name: capable-auk-759
+run_uuid: 538929fee32740fca1e467b25ec1a256
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741058172278
+status: 3
+tags: []
+user_id: guita
