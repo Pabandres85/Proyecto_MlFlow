@@ -1,2 +1,5 @@
 *.safetensors filter=lfs diff=lfs merge=lfs -text
 *.pt filter=lfs diff=lfs merge=lfs -text
+Proyecto_ml/modelo_final/model.safetensors filter=lfs diff=lfs merge=lfs -text
+Proyecto_ml/results/checkpoint-125/model.safetensors filter=lfs diff=lfs merge=lfs -text
+Proyecto_ml/results/checkpoint-125/optimizer.pt filter=lfs diff=lfs merge=lfs -text
