@@ -110,58 +110,80 @@ Se entrenaron y compararon los siguientes modelos:
 ### **TinyBERT**
 #### **Evolución de Accuracy**
 ![Evolución de Accuracy TinyBERT](Proyecto_ml/graficas/tinybert_accuracy_evolution.png)
-- El modelo **mejoró su accuracy** desde 0.715 hasta 0.825 en dos épocas.
-- Su crecimiento es estable, pero se mantiene **por debajo de los otros modelos**.
+- **Crecimiento progresivo de accuracy**, comenzando en **0.715** y alcanzando **0.825**.
+- Aunque mejora con las épocas, **su rendimiento es inferior a los otros modelos**, indicando menor capacidad de aprendizaje.
+- La tendencia de crecimiento indica que aún podría mejorar con más entrenamiento, pero el ritmo de crecimiento sugiere que podría estancarse pronto.
 
 #### **Matriz de Confusión**
 ![Matriz de Confusión TinyBERT](Proyecto_ml/graficas/tinybert_confusion_matrix.png)
-- **Más confusión** en las clases **Business y Sci/Tech**, lo que indica dificultades en la separación de categorías similares.
+- **Mayor confusión en las categorías Business y Sci/Tech**, lo que indica que el modelo **tiene dificultades en separar noticias de negocios y tecnología**.
+- Predicciones más erróneas en comparación con los otros modelos.
+- La clasificación de la categoría “Mundo” es más precisa que otras, lo que sugiere que el modelo diferencia mejor eventos globales que temas técnicos.
 
 #### **Evolución de F1-Score**
 ![F1-Score TinyBERT](Proyecto_ml/graficas/tinybert_f1_evolution.png)
-- Su **F1-score final es 0.8247**, el más bajo de los tres modelos.
+- **F1-score final de 0.8247**, reflejando que el modelo **no logra un balance óptimo entre precisión y recall**.
+- **La diferencia entre accuracy y F1-score indica que el modelo tiende a predecir algunas categorías con mayor confianza que otras**, pero sigue teniendo errores significativos en ciertos segmentos del dataset.
+
 
 #### **Función de Costo**
 ![Pérdida TinyBERT](Proyecto_ml/graficas/tinybert_loss_function.png)
-- **Disminución progresiva**, pero su pérdida inicial es mayor, indicando menor eficiencia en aprendizaje.
+- **Pérdida inicial más alta** y reducción más lenta, lo que sugiere que **requiere más entrenamiento para converger**.
+- Puede haber indicios de sobreajuste si se entrena demasiado sin mejorar sustancialmente el desempeño.
+- **La función de costo no se estabiliza completamente**, lo que indica que el modelo sigue ajustando parámetros sin alcanzar una convergencia clara.
 
 ---
 
 ### **BERT-Mini**
 #### **Evolución de Accuracy**
 ![Evolución de Accuracy BERT-Mini](Proyecto_ml/graficas/bert_mini_accuracy_evolution.png)
-- Accuracy final **0.832**, mejor que TinyBERT pero inferior a DistilBERT.
+-- **Accuracy final de 0.832**, lo que representa una mejora constante durante las épocas de entrenamiento.
+- Su crecimiento es más estable que TinyBERT, pero no alcanza la precisión lograda por DistilBERT.
+- La tendencia sugiere que el modelo podría beneficiarse de más épocas de entrenamiento para lograr un mayor ajuste sin caer en sobreajuste.
 
 #### **Matriz de Confusión**
 ![Matriz de Confusión BERT-Mini](Proyecto_ml/graficas/bert_mini_confusion_matrix.png)
-- **Menos confusión** que TinyBERT, pero sigue habiendo errores entre **Business y Sci/Tech**.
+- **Menos confusión** que TinyBERT, lo que indica una mejor separación de clases.
+- Sigue mostrando errores en la clasificación de noticias de **Negocios** y **Ciencia/Tecnología**, lo que sugiere que los términos utilizados en estos dominios pueden ser similares y confundir al modelo.
+- Se observa una leve mejora en la correcta clasificación de la categoría **Mundo**, donde hay menos errores que en TinyBERT.
 
 #### **Evolución de F1-Score**
 ![F1-Score BERT-Mini](Proyecto_ml/graficas/bert_mini_f1_evolution.png)
-- Su **F1-score es 0.8311**, ligeramente mejor que TinyBERT.
+- **F1-score final de 0.8311**, mostrando un equilibrio entre precisión y recall.
+- Su crecimiento es consistente y más estable que en TinyBERT, lo que sugiere que generaliza mejor.
+- Aunque es mejor que TinyBERT, aún tiene margen de mejora, ya que no logra igualar el rendimiento de DistilBERT.
 
 #### **Función de Costo**
 ![Pérdida BERT-Mini](Proyecto_ml/graficas/bert_mini_loss_function.png)
-- **Mejor reducción de pérdida** en comparación con TinyBERT.
+- **Reducción de pérdida más rápida** en comparación con TinyBERT, lo que indica que el modelo se ajusta más eficientemente.
+- Se observa una tendencia de convergencia más clara, aunque podría beneficiarse de ajustes en la tasa de aprendizaje para optimizar aún más su desempeño.
 
 ---
 
 ### **DistilBERT**
 #### **Evolución de Accuracy**
 ![Evolución de Accuracy DistilBERT](Proyecto_ml/graficas/distilbert_accuracy_evolution.png)
-- **Accuracy más alta** con **0.866**, mostrando la mejor estabilidad.
+- **Accuracy final de 0.866**, la más alta de los tres modelos, lo que indica un mejor rendimiento general.
+- La curva de aprendizaje muestra una estabilidad clara desde la primera época, lo que sugiere que el modelo converge más rápido y con menor necesidad de ajustes.
+- Su alto desempeño sugiere que captura mejor las relaciones entre palabras dentro del dataset AG News.
 
 #### **Matriz de Confusión**
 ![Matriz de Confusión DistilBERT](Proyecto_ml/graficas/distilbert_confusion_matrix.png)
-- **Menor confusión entre clases**, indicando mejor generalización.
+- **Menor confusión general**, mostrando una clara mejora en la diferenciación de clases.
+- Aunque sigue habiendo algunos errores en la clasificación de Negocios y Ciencia/Tecnología, estos son considerablemente menores que en los otros modelos.
+- Su precisión en todas las categorías es más alta, con una reducción notable en los falsos positivos y falsos negativos.
+
 
 #### **Evolución de F1-Score**
 ![F1-Score DistilBERT](Proyecto_ml/graficas/distilbert_f1_evolution.png)
-- **Mejor balance entre precisión y recall**, con un **F1-score de 0.8653**.
+- **F1-score de 0.8653**, lo que muestra que DistilBERT tiene el mejor balance entre precisión y recall.
+- Su curva de mejora es más rápida que la de los otros modelos, lo que indica que aprende de manera más eficiente desde las primeras épocas.
 
 #### **Función de Costo**
 ![Pérdida DistilBERT](Proyecto_ml/graficas/distilbert_loss_function.png)
-- **Menor pérdida y mejor convergencia** en comparación con los otros modelos.
+- **Menor pérdida final** y mejor convergencia en comparación con los otros modelos.
+- Se observa una reducción rápida y estable de la función de costo, lo que sugiere que el modelo encuentra un óptimo más eficientemente.
+- No se observan indicios de sobreajuste, lo que indica que DistilBERT es capaz de generalizar mejor en los datos de prueba.
 
 ---
 
@@ -169,32 +191,40 @@ Se entrenaron y compararon los siguientes modelos:
 
 ### **Comparación de Accuracy entre Modelos**
 ![Comparación de Accuracy](Proyecto_ml/graficas/comparison_accuracy.png)
-- **DistilBERT supera a los demás** con **0.866**.
+ **DistilBERT lidera con 0.866, mientras que TinyBERT queda en último lugar con 0.826**.
+- **BERT-Mini se encuentra en un punto intermedio, con 0.832**, lo que muestra que tiene un desempeño aceptable pero no alcanza el nivel de DistilBERT.
 
 ### **Evolución de Accuracy**
 ![Evolución de Accuracy](Proyecto_ml/graficas/comparison_accuracy_evolution.png)
-- **DistilBERT tiene la curva más estable**, con mejor precisión desde el inicio.
+- **DistilBERT tiene una curva de aprendizaje más estable y rápida**.
+- **TinyBERT muestra la curva de mejora más lenta**, lo que sugiere que necesita más entrenamiento para alcanzar un rendimiento competitivo.
 
 ### **Comparación de Todas las Métricas**
 ![Comparación de Métricas](Proyecto_ml/graficas/comparison_all_metrics.png)
-- DistilBERT lidera en todas las métricas, TinyBERT es el más débil.
+- DistilBERT lidera en **accuracy, precision, recall y F1-score**.
+- **TinyBERT es el modelo con menor recall**, indicando que tiene más dificultades en identificar correctamente todas las categorías.
 
 ### **Comparación de F1-Score**
 ![Comparación de F1-Score](Proyecto_ml/graficas/comparison_f1.png)
-- **DistilBERT con el F1-score más alto**, indicando mejor balance de clasificación.
+- **DistilBERT mantiene el mejor F1-score, asegurando un equilibrio óptimo en clasificación**.
+- **La diferencia entre los modelos indica que TinyBERT es el más débil en términos de balance entre precisión y recall**.
 
 ### **Gráfico Radar – Comparación Completa**
 ![Gráfico Radar](Proyecto_ml/graficas/comparison_radar.png)
-- **DistilBERT domina todas las métricas** y es el modelo más robusto.
+- **DistilBERT domina todas las métricas** y es el modelo más eficiente.
+- **TinyBERT tiene las puntuaciones más bajas en todas las métricas evaluadas**.
 
 ---
 
 ## 🏆 **Conclusión Final**
-1️⃣ **DistilBERT es el mejor modelo**, con **mayor precisión y menor confusión**.  
 
-2️⃣ **BERT-Mini es una alternativa intermedia**, con **buen rendimiento pero inferior a DistilBERT**.  
+1️⃣ **DistilBERT es el mejor modelo**, con **mayor precisión y menor confusión**.
 
-3️⃣ **TinyBERT es el menos eficiente**, con **más errores de clasificación y menor precisión**.  
+2️⃣ **BERT-Mini es una alternativa intermedia**, con **buen rendimiento pero inferior a DistilBERT**.
+
+3️⃣ **TinyBERT es el menos eficiente**, con **más errores de clasificación y menor precisión**.
+
+4️⃣ **Los tres modelos muestran dificultades similares en diferenciar noticias de negocios y tecnología**, sugiriendo que se podrían mejorar los embeddings o el ajuste fino del dataset.
 
 ---
 
