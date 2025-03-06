@@ -62,33 +62,33 @@ Se ha seleccionado **TinyBERT**, una versión optimizada de BERT, que conserva s
 El proyecto utiliza **MLflow** para registrar y visualizar métricas clave:
 
 1️⃣ **📈 Evolución de la Accuracy**
-   ![Accuracy Evolution](graficas/accuracy_evolution.png)
+   ![Accuracy Evolution](Proyecto_ml/graficas/accuracy_evolution.png)
    - La precisión mejora con las épocas, pasando de 0.68 en la primera a 0.82 en la segunda.
    - Indica que el modelo ha convergido correctamente.
 
 2️⃣ **📊 Evolución de Accuracy y F1-Score**
-   ![Metrics Evolution](graficas/all_metrics_evolution.png)
+   ![Metrics Evolution](Proyecto_ml/graficas/all_metrics_evolution.png)
    - Ambas métricas han aumentado progresivamente, lo que indica una mejora consistente del modelo.
    - F1-score muestra balance entre precisión y recall.
 
 3️⃣ **🎯 Matriz de Confusión**
-   ![Confusion Matrix](graficas/confusion_matrix.png)
+   ![Confusion Matrix](Proyecto_ml/graficas/confusion_matrix.png)
    - Predicciones correctas e incorrectas del modelo.
    - Se observan errores en clases similares, como "Business" y "Sci/Tech".
 
 4️⃣ **📊 Evolución del F1-Score**
-   ![F1 Evolution](graficas/f1_evolution.png)
+   ![F1 Evolution](Proyecto_ml/graficas/f1_evolution.png)
    - Muestra un aumento en F1-score, indicando una mejora en el equilibrio entre precisión y recall.
 
 5️⃣ **🏆 Métricas Finales**
-   ![Final Metrics](graficas/final_metrics.png)
+   ![Final Metrics](Proyecto_ml/graficas/final_metrics.png)
    - **Loss**: 0.6916, indicando un error bajo.
    - **Accuracy**: 0.82, reflejando buen desempeño.
    - **F1-Score**: 0.8194, alineado con la accuracy.
    - **Precisión y Recall**: 0.8233 y 0.82 respectivamente, sin sesgo hacia falsos positivos o negativos.
 
 6️⃣ **📉 Función de Costo**
-   ![Loss Function](graficas/loss_function.png)
+   ![Loss Function](Proyecto_ml/graficas/loss_function.png)
    - La función de pérdida disminuye con las épocas, mostrando aprendizaje estable.
    - No hay indicios de sobreajuste.
 
@@ -96,22 +96,22 @@ El proyecto utiliza **MLflow** para registrar y visualizar métricas clave:
 ## MLflow desde local
 
 1️⃣ **Metricas del Modelo 1**
-![pantallazo1](images/pantallazo1.png)
+![pantallazo1](Proyecto_ml/images/pantallazo1.png)
 
 2️⃣ **Metricas del Modelo 2**
-![pantallazo2](images/pantallazo2.png)
+![pantallazo2](Proyecto_ml/images/pantallazo2.png)
 
 3️⃣ **Metricas del Modelo 3**
-![pantallazo3](images/pantallazo3.png)
+![pantallazo3](Proyecto_ml/images/pantallazo3.png)
 
 4️⃣ **Metricas del Modelo 4**
-![pantallazo4](images/pantallazo4.png)
+![pantallazo4](Proyecto_ml/images/pantallazo4.png)
 
 5️⃣ **Overview**
-![pantallazo5](images/pantallazo5.png)
+![pantallazo5](Proyecto_ml/images/pantallazo5.png)
 
 6️⃣ **Artifacts**
-![pantallazo6](images/pantallazo6.png)
+![pantallazo6](Proyecto_ml/images/pantallazo6.png)
 
 ---
 ## 📦 Requisitos
