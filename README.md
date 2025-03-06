@@ -1,3 +1,20 @@
+# Especializacion en IA UAO
+
+## Grupo 3
+
+## Integrantes: 
+
+- Pablo Andrés Muñoz Martínez  -   **Código**: 2244676
+
+- Leidy Yasmin Hoyos Parra - **Código**: 2245224 
+                
+- Johan David Mendoza Vargas  - **Código**: 2245019
+                
+- Yineth Tatiana Hernández Narvaez  -  **Código**: 2244789 
+                
+---
+
+
 # 📌 Proyecto de Monitoreo en ML - IA con TinyBERT y MLflow
 
 Este proyecto implementa un modelo de clasificación de texto utilizando **TinyBERT**, con seguimiento completo de métricas y visualizaciones mediante **MLflow**.
