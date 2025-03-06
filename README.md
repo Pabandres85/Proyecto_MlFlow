@@ -14,40 +14,37 @@
                 
 ---
 
+# 📌 Proyecto de Monitoreo en ML - IA con TinyBERT, BERT-Mini y DistilBERT con MLflow
 
-# 📌 Proyecto de Monitoreo en ML - IA con TinyBERT y MLflow
-
-Este proyecto implementa un modelo de clasificación de texto utilizando **TinyBERT**, con seguimiento completo de métricas y visualizaciones mediante **MLflow**.
+Este proyecto implementa un modelo de clasificación de texto utilizando **TinyBERT**, **BERT-Mini** y **DistilBERT**, con seguimiento completo de métricas y visualizaciones mediante **MLflow**.
 
 ---
 
 ## 📖 Introducción
 
-Este proyecto utiliza **TinyBERT** para clasificar textos del dataset **AG News** en cuatro categorías. Durante el entrenamiento, se monitorea el rendimiento mediante métricas clave como **accuracy, F1-score, precision y recall**, además de generar visualizaciones para facilitar el análisis de resultados.
+Este proyecto utiliza modelos de la familia BERT para clasificar textos del dataset **AG News** en cuatro categorías. Durante el entrenamiento, se monitorea el rendimiento mediante métricas clave como **accuracy, F1-score, precision y recall**, además de generar visualizaciones para facilitar el análisis de resultados.
 
-El objetivo es demostrar cómo entrenar, evaluar y monitorear un modelo de **Machine Learning** en un entorno realista.
+El objetivo es comparar el rendimiento de estos modelos y determinar cuál ofrece la mejor precisión y generalización.
 
 ---
 
 ## 🎯 Justificación
 
-La clasificación de texto es esencial en aplicaciones como la organización automática de noticias. Se ha elegido **AG News** por su relevancia y tamaño, mientras que **TinyBERT** permite un balance entre rendimiento y eficiencia computacional. **MLflow** facilita el monitoreo del entrenamiento y la visualización de métricas para detectar problemas como el sobreajuste.
-
-Este proyecto combina herramientas modernas con un enfoque práctico para abordar un problema real.
+La clasificación de texto es esencial en aplicaciones como la organización automática de noticias. Se ha elegido **AG News** por su relevancia y tamaño, mientras que los modelos de la familia **BERT** permiten balancear rendimiento y eficiencia computacional. **MLflow** facilita el monitoreo del entrenamiento y la visualización de métricas para detectar problemas como el sobreajuste.
 
 ---
 
 ## 🎯 Objetivos
 
-1️⃣ **Entrenar** un modelo de clasificación de texto utilizando **AG News** y **TinyBERT**.
+1️⃣ **Entrenar** y comparar **TinyBERT**, **BERT-Mini** y **DistilBERT** en la tarea de clasificación de texto.  
 
-2️⃣ **Monitorear** el entrenamiento mediante gráficas de la función de costo y métricas de desempeño para training y validación.
+2️⃣ **Monitorear** el entrenamiento mediante gráficas de la función de costo y métricas de desempeño.  
 
-3️⃣ **Evaluar** el rendimiento del modelo con métricas específicas.
+3️⃣ **Evaluar** el rendimiento de cada modelo con métricas específicas.  
 
-4️⃣ **Utilizar MLflow** para registrar y visualizar los resultados del experimento, facilitando su interpretación.
+4️⃣ **Utilizar MLflow** para registrar y visualizar los resultados del experimento.  
 
-5️⃣ **Presentar un informe** con el proceso, los resultados y conclusiones obtenidas.
+5️⃣ **Presentar un análisis comparativo** de los modelos.  
 
 ---
 
@@ -60,83 +57,101 @@ El dataset **AG News** contiene noticias categorizadas en cuatro clases:
 - 💰 **Negocios** (Clase 2)
 - 🔬 **Ciencia/Tecnología** (Clase 3)
 
-Cada instancia consta de un título y una descripción de la noticia, junto con su etiqueta correspondiente. Se ha reducido el tamaño a **1000 muestras para entrenamiento** y **500 para test**, con el fin de agilizar el proceso.
+Cada instancia consta de un título y una descripción de la noticia, junto con su etiqueta correspondiente. Se ha reducido el tamaño a **1000 muestras para entrenamiento** y **500 para test**.
 
 ---
 
-## 🤖 Modelo: TinyBERT
+## 🤖 Modelos
 
-Se ha seleccionado **TinyBERT**, una versión optimizada de BERT, que conserva su arquitectura pero con menos parámetros, logrando eficiencia en tiempo y recursos computacionales.
+Se entrenaron y compararon los siguientes modelos:
 
----
+- **TinyBERT** 🏋️‍♂️: Versión compacta y eficiente de BERT.
 
-## 🚀 Proceso de Entrenamiento
+- **BERT-Mini** 📏: Un modelo con una estructura reducida de BERT.
 
-🔹 **Tokenización**: Se usa el tokenizador de **TinyBERT**, con un límite de **128 tokens**.
-
-🔹 **Entrenamiento**: Configurado en **2 épocas**, con batch size **4** para entrenamiento y **8** para validación.
-
-🔹 **Métricas**: Se calculan dentro del código métricas como **accuracy, F1-score, precision y recall**.
+- **DistilBERT** 🚀: Modelo liviano que retiene el 97% del rendimiento de BERT con solo el 60% de los parámetros.
 
 ---
 
-## 📊 Visualizaciones con MLflow
+## 📊 Análisis de Cada Modelo
 
-El proyecto utiliza **MLflow** para registrar y visualizar métricas clave:
+### **TinyBERT**
 
-1️⃣ **📈 Evolución de la Accuracy**
-   ![Accuracy Evolution](Proyecto_ml/graficas/accuracy_evolution.png)
-   - La precisión mejora con las épocas, pasando de 0.68 en la primera a 0.82 en la segunda.
-   - Indica que el modelo ha convergido correctamente.
+#### **Evolución de Accuracy**
+![Evolución de Accuracy TinyBERT](Proyecto_ml/graficas/tinybert_accuracy_evolution.png)
 
-2️⃣ **📊 Evolución de Accuracy y F1-Score**
-   ![Metrics Evolution](Proyecto_ml/graficas/all_metrics_evolution.png)
-   - Ambas métricas han aumentado progresivamente, lo que indica una mejora consistente del modelo.
-   - F1-score muestra balance entre precisión y recall.
+#### **Matriz de Confusión**
+![Matriz de Confusión TinyBERT](Proyecto_ml/graficas/tinybert_confusion_matrix.png)
 
-3️⃣ **🎯 Matriz de Confusión**
-   ![Confusion Matrix](Proyecto_ml/graficas/confusion_matrix.png)
-   - Predicciones correctas e incorrectas del modelo.
-   - Se observan errores en clases similares, como "Business" y "Sci/Tech".
+#### **Evolución de F1-Score**
+![F1-Score TinyBERT](Proyecto_ml/graficas/tinybert_f1_evolution.png)
 
-4️⃣ **📊 Evolución del F1-Score**
-   ![F1 Evolution](Proyecto_ml/graficas/f1_evolution.png)
-   - Muestra un aumento en F1-score, indicando una mejora en el equilibrio entre precisión y recall.
-
-5️⃣ **🏆 Métricas Finales**
-   ![Final Metrics](Proyecto_ml/graficas/final_metrics.png)
-   - **Loss**: 0.6916, indicando un error bajo.
-   - **Accuracy**: 0.82, reflejando buen desempeño.
-   - **F1-Score**: 0.8194, alineado con la accuracy.
-   - **Precisión y Recall**: 0.8233 y 0.82 respectivamente, sin sesgo hacia falsos positivos o negativos.
-
-6️⃣ **📉 Función de Costo**
-   ![Loss Function](Proyecto_ml/graficas/loss_function.png)
-   - La función de pérdida disminuye con las épocas, mostrando aprendizaje estable.
-   - No hay indicios de sobreajuste.
+#### **Función de Costo**
+![Pérdida TinyBERT](Proyecto_ml/graficas/tinybert_loss_function.png)
 
 ---
-## MLflow desde local
 
-1️⃣ **Metricas del Modelo 1**
-![pantallazo1](Proyecto_ml/images/pantallazo1.png)
+### **BERT-Mini**
 
-2️⃣ **Metricas del Modelo 2**
-![pantallazo2](Proyecto_ml/images/pantallazo2.png)
+#### **Evolución de Accuracy**
+![Evolución de Accuracy BERT-Mini](Proyecto_ml/graficas/bert_mini_accuracy_evolution.png)
 
-3️⃣ **Metricas del Modelo 3**
-![pantallazo3](Proyecto_ml/images/pantallazo3.png)
+#### **Matriz de Confusión**
+![Matriz de Confusión BERT-Mini](Proyecto_ml/graficas/bert_mini_confusion_matrix.png)
 
-4️⃣ **Metricas del Modelo 4**
-![pantallazo4](Proyecto_ml/images/pantallazo4.png)
+#### **Evolución de F1-Score**
+![F1-Score BERT-Mini](Proyecto_ml/graficas/bert_mini_f1_evolution.png)
 
-5️⃣ **Overview**
-![pantallazo5](Proyecto_ml/images/pantallazo5.png)
-
-6️⃣ **Artifacts**
-![pantallazo6](Proyecto_ml/images/pantallazo6.png)
+#### **Función de Costo**
+![Pérdida BERT-Mini](Proyecto_ml/graficas/bert_mini_loss_function.png)
 
 ---
+
+### **DistilBERT**
+
+#### **Evolución de Accuracy**
+![Evolución de Accuracy DistilBERT](Proyecto_ml/graficas/distilbert_accuracy_evolution.png)
+
+#### **Matriz de Confusión**
+![Matriz de Confusión DistilBERT](Proyecto_ml/graficas/distilbert_confusion_matrix.png)
+
+#### **Evolución de F1-Score**
+![F1-Score DistilBERT](Proyecto_ml/graficas/distilbert_f1_evolution.png)
+
+#### **Función de Costo**
+![Pérdida DistilBERT](Proyecto_ml/graficas/distilbert_loss_function.png)
+
+---
+
+## 📊 Comparación de Modelos
+
+### **1️⃣ Comparación de Accuracy entre Modelos**
+![Comparación de Accuracy](Proyecto_ml/graficas/comparison_accuracy.png)
+
+### **2️⃣ Evolución de Accuracy**
+![Evolución de Accuracy](Proyecto_ml/graficas/comparison_accuracy_evolution.png)
+
+### **3️⃣ Comparación de Todas las Métricas**
+![Comparación de Métricas](Proyecto_ml/graficas/comparison_all_metrics.png)
+
+### **4️⃣ Comparación de F1-Score**
+![Comparación de F1-Score](Proyecto_ml/graficas/comparison_f1.png)
+
+### **5️⃣ Gráfico Radar – Comparación Completa**
+![Gráfico Radar](Proyecto_ml/graficas/comparison_radar.png)
+
+---
+
+## 🏆 **Conclusión Final**
+
+1️⃣ **DistilBERT es el mejor modelo**, con **mayor precisión, mejor estabilidad y menor confusión**. 
+
+2️⃣ **BERT-Mini es una alternativa intermedia**, con buen rendimiento pero menor que DistilBERT.  
+
+3️⃣ **TinyBERT es el menos eficiente**, con **más errores de clasificación y menor precisión**.  
+
+---
+
 ## 📦 Requisitos
 
 ```bash
@@ -164,34 +179,6 @@ seaborn
    ```bash
    pip install torch transformers datasets scikit-learn matplotlib numpy mlflow seaborn
    ```
-
----
-
-## 🏗 Estructura del Proyecto
-
-```
-ProjectoMLFlow/
-│
-├── 📜 ModeloMLFlow.py         # Script principal con el código de entrenamiento
-├── 📂 modelo_final/           # Modelo entrenado
-├── 📂 results/                # Resultados del entrenamiento
-├── 📂 graficas/               # Gráficas generadas
-├── 📂 logs/                   # Logs del entrenamiento
-└── 📜 README.md               # Este archivo
-```
-
----
-
-## 🔍 Conclusión General
-
-🔹 **Resultados óptimos** en el entrenamiento, a pesar de limitaciones computacionales.
-
-🔹 **Aprendizaje positivo** reflejado en mejoras de **accuracy** y **F1-Score**.
-
-🔹 **Confusión en algunas clases** que puede mejorar con más datos y ajustes en hiperparámetros.
-
-🔹 **Tendencia decreciente en la función de pérdida**, sugiriendo un buen aprendizaje.
-
 ---
 
 ## ⚠️ Limitaciones

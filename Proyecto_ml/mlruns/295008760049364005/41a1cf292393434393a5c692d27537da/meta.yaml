@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/guita/OneDrive/Escritorio/ProyectMlFlow/Proyecto_ml/mlruns/295008760049364005/41a1cf292393434393a5c692d27537da/artifacts
+end_time: 1741223281941
+entry_point_name: ''
+experiment_id: '295008760049364005'
+lifecycle_stage: active
+run_id: 41a1cf292393434393a5c692d27537da
+run_name: comparacion-modelos
+run_uuid: 41a1cf292393434393a5c692d27537da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741222651046
+status: 3
+tags: []
+user_id: guita
