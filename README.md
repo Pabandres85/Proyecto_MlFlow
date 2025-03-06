@@ -40,9 +40,13 @@ Este proyecto combina herramientas modernas con un enfoque práctico para aborda
 ## 🎯 Objetivos
 
 1️⃣ **Entrenar** un modelo de clasificación de texto utilizando **AG News** y **TinyBERT**.
+
 2️⃣ **Monitorear** el entrenamiento mediante gráficas de la función de costo y métricas de desempeño para training y validación.
+
 3️⃣ **Evaluar** el rendimiento del modelo con métricas específicas.
+
 4️⃣ **Utilizar MLflow** para registrar y visualizar los resultados del experimento, facilitando su interpretación.
+
 5️⃣ **Presentar un informe** con el proceso, los resultados y conclusiones obtenidas.
 
 ---
@@ -69,7 +73,9 @@ Se ha seleccionado **TinyBERT**, una versión optimizada de BERT, que conserva s
 ## 🚀 Proceso de Entrenamiento
 
 🔹 **Tokenización**: Se usa el tokenizador de **TinyBERT**, con un límite de **128 tokens**.
+
 🔹 **Entrenamiento**: Configurado en **2 épocas**, con batch size **4** para entrenamiento y **8** para validación.
+
 🔹 **Métricas**: Se calculan dentro del código métricas como **accuracy, F1-score, precision y recall**.
 
 ---
@@ -179,8 +185,11 @@ ProjectoMLFlow/
 ## 🔍 Conclusión General
 
 🔹 **Resultados óptimos** en el entrenamiento, a pesar de limitaciones computacionales.
+
 🔹 **Aprendizaje positivo** reflejado en mejoras de **accuracy** y **F1-Score**.
+
 🔹 **Confusión en algunas clases** que puede mejorar con más datos y ajustes en hiperparámetros.
+
 🔹 **Tendencia decreciente en la función de pérdida**, sugiriendo un buen aprendizaje.
 
 ---
